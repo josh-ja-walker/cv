@@ -2,118 +2,197 @@
 
 \usepackage{xcolor}
 \usepackage{hyperref}
-\definecolor{mycol}{HTML}{0000CD}
+\definecolor{urlblue}{HTML}{0000CD}
+\definecolor{darkgrey}{HTML}{191919}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    urlcolor=mycol,
+    linkcolor=urlblue,
+    urlcolor=darkgrey,
 }
 
 \usepackage{enumitem}
 \renewcommand{\labelitemi}{$\bullet$}
+\setlist{leftmargin=2em}
 
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \renewcommand\familydefault\sfdefault
 
-\newcommand{\mrule} {\null\noindent\rule{\textwidth}{0.4pt}}
-\newcommand{\mdiv} {\hspace*{0.8em}|\hspace*{0.8em}}
-\newcommand{\mdates} {\hspace*{\fill}\textit}
+% Contact details
+\newcommand{\contact}[1]{\normalsize{#1}}
+\newcommand{\contactdiv} {\hspace*{0.8em}}
+\newcommand{\email}[2]{\href{mailto:#1@#2}{\underline{#1{\small\fontfamily{phv}\selectfont@}#2}}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}}
+\newcommand{\portfolio}{\href{https://josh-ja-walker.github.io/portfolio/}{\underline{Portfolio}}}
 
+% Layout helpers    
+\newcommand{\horizrule}{{\vspace{2pt}}{\hrule height 0.5pt}}
+\newcommand{\dates}[1]{\hfill\textit{(#1)}}
+
+% A Level results
+\newcommand{\alevel}[2]{#1 - \textit{\textbf#2}}
+
+\newcommand{\tab}{\hspace{1em}}
+% Project formatting
+\newcommand{\project}[4]{
+    \subsection*{\textbf{#1} - \textit{#3} \dates{#2}}\hfill
+    \begin{minipage}{\dimexpr\textwidth - 1em}
+        #4
+    \end{minipage}
+}
+
+% Layout header formatting
 \usepackage{titlesec}
-\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont}{\thesection}{1em}{}
+\titleformat{\section}{\normalfont\large}{\thesection}{}{}[\horizrule]
+\titlespacing*{\section}{0pt}{1em}{0.65em}
 
-\usepackage[a4paper, total={6in, 10in}]{geometry}
+\titleformat{\subsection}{\normalfont}{\thesection}{}{}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.45em}
+
+% Column handling
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+
+% Turn off numbering
+\pagenumbering{gobble}
+
+% Set margin
+\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
 
 
 \begin{document}
 
-\title{\textbf{Joshua Walker}}
-\date{}
-\author{
-    160 Princes Avenue, London, W3 8LU\\
-    +44 (0)7572224173\mdiv
-        \href{mailto:j.walker1005@outlook.com}{\underline{j.walker1005{\small\fontfamily{phv}\selectfont@}outlook.com}}\mdiv
-        \href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}\mdiv
-        \href{https://josh-ja-walker.github.io/portfolio/}{\underline{Portfolio}}
-}
+% Header
+\begin{multicols}{2}
 
-\maketitle
+    % Name and links
+    \begin{flushleft}
+        {\LARGE\textbf{Joshua Walker}}\\
+        \vspace{0.2em}
+        \portfolio\contactdiv\linkedin
+    \end{flushleft}
+    
+    \columnbreak
+    
+    % Contact details
+    \begin{flushright}
+        \contact{Acton, London, W3 8LU}\\
+        \vspace{0.2em}
+        \contact{\email{j.walker1005}{outlook.com}}
+        \contactdiv
+        \contact{+44 7572224173}
+    \end{flushright}
+    
+\end{multicols}
 
+\vspace{0.15em}
 
-\section*{Profile}
+% Profile
+\begin{minipage}{\dimexpr\textwidth - 1em}
+    MEng Computing student in my \textbf{penultimate year} at Imperial College London looking for a 
+    \textbf{6-month placement} from April - September. I have an interest in \textbf{games and software development}, 
+    explored through game jams and university projects which helped me build foundational teamworking skills 
+    and further my interest in design and implementation.
+\end{minipage}
 
-3rd-year MEng Computing student at Imperial College London with an interest in games and software development, 
-    explored through game jams and university projects which were instrumental in building foundational teamworking skills.
-
-\mrule
-
+\vspace{0.15em}
 
 \section*{Education}
 
-\subsection*{\textbf{Imperial College London} \mdates{(2022 - current)}}
+% University
+\subsection*{\textbf{Imperial College London} \dates{2022 - current}}
 
-MEng Computing course, currently in 3rd year
-
-\begin{itemize}[noitemsep]
-    \item Achieved a 1st class honours in 2nd year
-    \item Topics include: algorithms analysis, databases, networks and communication, computer architecture
-    \item Developed skills in Git, C, Java, Rust, Haskell, Assembly
-    \item Expanded on A-Level mathematics knowledge with modules in Linear Algebra and Predicate Logic
-    \item Worked effectively in complex, time-constrained group projects, which included developing an operating system, compiler and assembler
-    \item Studied Human-Centred Design techniques with Royal College of Art in order to build an appropriate Android app for a target market
-\end{itemize}
+{\tab}MEng Computing course, currently in 3rd year. Achieved \textbf{first class honours} in 2nd year
 
 
-\subsection*{\textbf{Shrewsbury Sixth-Form College} \mdates{(2020 - 2022)}}
+% A Levels
+\subsection*{\textbf{Shrewsbury Sixth-Form College} \dates{2020 - 2022}}
 
-A Levels
+{\tab}A Levels: 
+    \alevel{Computer Science}{A*},
+    \alevel{Physics}{A*},
+    \alevel{Maths}{A*},
+    \alevel{Further Maths}{A}
 
-\begin{itemize}[noitemsep]
-    \item Computer Science - A*
-    \item Physics - A*
-    \item Maths - A*
-    \item Further Maths - A
-\end{itemize}
-
-\subsection*{\textbf{William Brookes School} \mdates{(2015 - 2020)}}
-
-10 GCSEs grades 9 - 7
-
-\mrule
 
 
 \section*{Work Experience and Volunteering}
 
-\subsection*{\textbf{IC Hack} \mdates{(2023, 2024)}}
-Europe's largest student-run hackathon, hosted on South Kensington Campus
+\subsection*{\textbf{IC Hack} \dates{2023, 2024}}
+{\tab}Europe's largest student-run hackathon, hosted on South Kensington Campus
 
+\vspace{-0.75em} 
 \begin{itemize}[noitemsep]
-    \item Volunteered throughout both days to help secure the premises and cater for hundreds of participants and industry representatives
-    \item Participated to experience for myself the challenge of the hackathon and learn more about different 
-        sectors of the industry through the numerous workshops hosted throughout the event
+    \item Volunteered to help secure the premises and cater for the hundreds of participants and industry representatives
+    \item Participated to learn more about different sectors of the industry through the workshops, 
+    while experiencing the challenge of the hackathon.
 \end{itemize}
+\vspace{-0.75em} 
 
 
-\subsection*{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \mdates{(2019)}}
-
-Completed a week's work experience among a group of automotive apprentices, studying engines in a practical environment to 
+\subsection*{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \dates{2019}}
+{\tab}Completed a week's work experience among a group of automotive apprentices, studying engines in a practical environment to 
     better understand how software engineering techniques can be applied to different engineering disciplines.
 
-\mrule
 
+
+\section*{Projects}
+
+\project{Lettuce Eat \normalfont{(Group Project)}}{2024}{Flutter, Firebase, Dart}{
+    Studied \textbf{Human-Centered Design techniques} with the Royal College of Art in order to build a student recipe-based social media Android app.
+    Applied paired-programming and iterative techniques to build the frontend, whilst learning about the difficulties of fullstack development
+    from teammates who worked on the backend.
+}
+
+\project{WACC Compiler \normalfont{(Group Project)}}{2024}{Rust}{
+    Built an optimising compiler from scratch in \textbf{Rust}, using the CLAP, Chumsky and Ariadne crates to provide a command-line interface
+    and clear error reporting. Designed using internal intermediate representation to allow for code generation into both
+    \textbf{Arm32} and \textbf{Intel x86-64} assembly code.
+}
+
+\project{Sorts TUI}{2024}{Rust}{
+    Developed an in-terminal utility for visualising sorting algorithms - built entirely in Rust using the Ratatui and CLAP crates.
+}
+
+\project{Pintos \normalfont{(Group Project)}}{2023}{C}{
+    Extended a simple \textbf{operating system framework} into a complex and developed system with features such as a priority-based thread scheduler, 
+    synchronisation primitives, system calls and virtual memory. Explored foundational concepts of OS architectures and delved into the
+    pre-existing codebase to understand their practical implementations. Managed workload between group members and wrote detailed design reports. 
+}
+
+\project{Weather Wallpaper}{2022 - 2024}{Rust}{
+    Built a \textbf{command-line wallpaper engine} that dynamically changes the user's desktop wallpaper to reflect the local weather. 
+    Learnt how to access online API data and used the Dialoguer crate to provide a clean terminal menu interface for selecting weather tags for 
+    user-provided wallpaper images.
+}
+
+\project{Origame}{2022 - 2024}{Unity, C\#}{
+    Designed and developed a \textbf{2D puzzle platformer game} for A-Level coursework - attained an \textbf{A/A*} grade
+    and has been expanded upon after submission. Learnt problem-solving and bug-fixing techniques during the design of the complex central mechanic: 
+    'folding' paper platforms in order to progress, providing the illusion using vector mathematics and sprite redrawing.
+    Practiced \textbf{level and puzzle design}, and learnt how to limit a design appetite to maintain a cohesive vision.  
+    Completed a comprehensive design document explaining game's inspirations and design methodology.
+}
+
+\project{Painball}{2021}{Unity, C\#}{
+    Pinball game developed in \textbf{7 days} for the 2021 Ludwig Jam. The theme of the jam was Foddian: a game
+    which emulates the frustration of popular Bennett Foddy games.
+    I learnt the importance of \textbf{user testing and feedback} - by watching people play, I could calibrate the difficulty
+    to ensure they remained fun while still meeting the design brief. 
+}
+    
 
 \section*{Skills and Interests}
 
+\textbf{Languages and Technologies:}{\tab}
+    C, C++, C\#, Rust, Java, Kotlin, Haskell, React, JS, HTML, CSS, %Flutter, 
+    Git, Unity, Latex
 
-\textbf{Programming Languages:} Unity, C, C\#, Rust, Java, Kotlin, Haskell, HTML, CSS\\
-\noindent\textbf{Games Development:} I have competed in game jams, developing games in Unity in anywhere from 48 hours to 14 days. 
-To learn more about the industry, I have read game development blogs and attended the Games Careers Week.\\
+% \noindent\textbf{Game Development:} I have competed in game jams, developing games in Unity in anywhere from 48 hours to 14 days.
+% To learn more about the industry, I have studied game development post-mortem blogs, and attended the Games Careers Week.\\
 
-\noindent\textbf{Guitar:} I taught myself guitar to keep busy during the Covid-19 lockdowns.\\  
-\noindent\textbf{Archery:} I was a member of Audco Archers, an archery club based where Archery GB train; consequently,
-I have trained with and been inspired by the dedication of Olympic and Paralympic archers.\\
+\noindent\textbf{Archery:}{\tab}former member of Audco Archers, an archery club based at Archery GB's training facilities;
+training with Olympic and Paralympic archers was hugely inspiring.
 
+\noindent\textbf{Guitar:}{\tab}self-taught guitarist; I learnt acoustic guitar to keep busy during the Covid-19 lockdown
+and have kept playing since.
 \end{document}
