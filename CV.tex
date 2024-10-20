@@ -13,13 +13,12 @@
 
 \usepackage{enumitem}
 \renewcommand{\labelitemi}{$\bullet$}
-\setlist{leftmargin=2em}
 
 \renewcommand\familydefault\sfdefault
 
 % Contact details
 \newcommand{\contact}[1]{\normalsize{#1}}
-\newcommand{\contactdiv} {\hspace*{0.8em}}
+\newcommand{\contactdiv}{\hspace*{0.8em}}
 \newcommand{\email}[2]{\href{mailto:#1@#2}{\underline{#1{\small\fontfamily{phv}\selectfont@}#2}}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}}
 \newcommand{\portfolio}{\href{https://josh-ja-walker.github.io/portfolio/}{\underline{Portfolio}}}
@@ -27,26 +26,28 @@
 % Layout helpers    
 \newcommand{\horizrule}{{\vspace{2pt}}{\hrule height 0.5pt}}
 \newcommand{\dates}[1]{\hfill\textit{(#1)}}
+\newcommand{\tab}{\hspace{0.5cm}}
+\newcommand{\indentedblock}[1]{
+    \hfill
+    \begin{minipage}{\dimexpr\textwidth - 0.65cm}
+        #1
+    \end{minipage}
+}
 
 % A Level results
 \newcommand{\alevel}[2]{#1 - \textit{#2}}
 
-\newcommand{\tab}{\hspace{1em}}
 % Project formatting
 \newcommand{\project}[4]{
-    \subsection*{\textbf{#1} - \textit{#3} \dates{#2}}\hfill
-    \begin{minipage}{\dimexpr\textwidth - 1em}
-        #4
-    \end{minipage}
+    \subsection*{\textbf{#1} - \textit{#3} \dates{#2}}
+    \indentedblock{#4}
 }
 
 % Layout header formatting
 \usepackage{titlesec}
-\titleformat{\section}{\normalfont\large}{\thesection}{}{}[\horizrule]
-\titlespacing*{\section}{0pt}{1em}{0.65em}
+\titleformat{\section}{\normalfont\large}{\thesection}{1em}{}[\horizrule]
 
-\titleformat{\subsection}{\normalfont}{\thesection}{}{}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.45em}
+\titleformat{\subsection}{\normalfont}{\thesection}{1em}{}
 
 % Column handling
 \usepackage{multicol}
@@ -56,7 +57,9 @@
 \pagenumbering{gobble}
 
 % Set margin
-\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+% \usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+\usepackage[a4paper, total={6.75in, 10in}]{geometry}
+
 
 
 \begin{document}
@@ -67,7 +70,7 @@
     % Name and links
     \begin{flushleft}
         {\LARGE\textbf{Joshua Walker}}\\
-        \vspace{0.2em}
+        \vspace{0.5em}
         \portfolio\contactdiv\linkedin
     \end{flushleft}
     
@@ -76,7 +79,7 @@
     % Contact details
     \begin{flushright}
         \contact{Acton, London, W3 8LU}\\
-        \vspace{0.2em}
+        \vspace{0.5em}
         \contact{\email{j.walker1005}{outlook.com}}
         \contactdiv
         \contact{+44 7572224173}
@@ -84,17 +87,15 @@
     
 \end{multicols}
 
-\vspace{0.15em}
+\vspace{1.25em}
 
 % Profile
-\begin{minipage}{\dimexpr\textwidth - 1em}
-    MEng Computing student in my \textbf{penultimate year} at Imperial College London looking for a 
-    \textbf{6-month placement} from April - September. I have an interest in \textbf{games and software development}, 
-    explored through game jams and university projects which helped me build foundational teamworking skills 
-    and further my interest in design and implementation.
-\end{minipage}
+{\noindent}MEng Computing student in my \textbf{penultimate year} at Imperial College London looking for a \textbf{6-month placement} from April - September. 
+Interested in \textbf{games and software development}, which I fostered through university projects and solo development work 
+that helped me build foundational teamworking and time-management skills. 
 
 \vspace{0.15em}
+
 
 \section*{Education}
 
@@ -120,43 +121,68 @@
 \subsection*{\textbf{IC Hack} \dates{2023, 2024}}
 {\tab}Europe's largest student-run hackathon, hosted on South Kensington Campus
 
-\vspace{-0.75em} 
-\begin{itemize}[noitemsep]
-    \item Volunteered to help secure the premises and cater for the hundreds of participants and industry representatives
-    \item Participated to learn more about different sectors of the industry through the workshops, 
-    while experiencing the challenge of the hackathon.
+\begin{itemize}
+    
+    \item \textbf{Volunteered} throughout both days to help secure the premises and cater for the hundreds of participants and industry representatives. 
+    Collaborated with fellow students to \textbf{organise} and deliver a smooth experience for all involved, helping to handle unexpected logistical problems such as late 
+    food deliveries. I learnt how to \textbf{handle pressure} and de-escalate situations while serving food to customers, 
+    managing queues and disgruntled participants.
+
+    \item Participated to discover more about different sectors of the industry through \textbf{technical workshops}, 
+    while experiencing the challenge of the hackathon and the strict \textbf{time-management skills} required.
+    I spoke to sponsors and industry representatives to better understand the practical application of concepts studied in lectures, 
+    and developed integral \textbf{networking skills}.
+
 \end{itemize}
-\vspace{-0.75em} 
 
 
 \subsection*{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \dates{2019}}
-{\tab}Completed a week's work experience among a group of automotive apprentices, studying engines in a practical environment to 
-    better understand how software engineering techniques can be applied to different engineering disciplines.
-
+\indentedblock{
+    Completed a week's work experience among a group of automotive apprentices, \textbf{integrating seamlessly} into an established group.
+    Studied engines in a practical environment to better understand how software engineering techniques are applied in 
+    different engineering disciplines. Picked up practical \textbf{problem-solving skills} deconstructing retired engine blocks
+    and brainstormed with apprentices on how to overcome the issues within a short timeframe.
+}
 
 
 \section*{Projects}
 
 \project{Lettuce Eat \normalfont{(Group Project)}}{2024}{Flutter, Firebase, Dart}{
     Studied \textbf{Human-Centered Design techniques} with the Royal College of Art in order to build a student recipe-based social media Android app.
-    Applied paired-programming and iterative techniques to build the frontend, whilst learning about the difficulties of fullstack development
-    from teammates who worked on the backend.
-}
+    Determined the needs of the target market through interviews and data-gathering techniques to ensure our product was commercially viable.
 
-\project{WACC Compiler \normalfont{(Group Project)}}{2024}{Rust}{
-    Built an optimising compiler from scratch in \textbf{Rust}, using the CLAP, Chumsky and Ariadne crates to provide a command-line interface
-    and clear error reporting. Designed using internal intermediate representation to allow for code generation into both
-    \textbf{Arm32} and \textbf{Intel x86-64} assembly code.
+    For the final deadline, my teammates and I presented the application to lecturers and fellow students, \textbf{ably demonstrating}
+    the value of our project. When technical difficulties hampered the presentation, I improvised, holding the attention of the audience
+    while my teammates fixed the errors.
 }
 
 \project{Sorts TUI}{2024}{Rust}{
-    Developed an in-terminal utility for visualising sorting algorithms - built entirely in Rust using the Ratatui and CLAP crates.
+    Developed an in-terminal utility for visualising sorting algorithms, built as as an exercise in understanding algorithmic complexity.
+    The stark contrast between developing this command-line interface and Lettuce Eat, an Android app, taught me the degree at which 
+    a commercial product is informed by its target market and their requirements.
+}
+
+\project{Portfolio Website}{2024}{JavaScript, React, CSS}{
+    Designed and developed my own portfolio website to showcase skills and experience gained through university and solo projects.
+    Learnt React and JavaScript fundamentals and how to deploy a website using GitHub pages, while exploring website design and its impact on 
+    user experience.
+}
+
+\project{WACC Compiler \normalfont{(Group Project)}}{2024}{Rust}{
+    Built an optimising compiler from scratch in Rust, using the clap, Chumsky and Ariadne crates to provide a command-line interface
+    and clear error reporting. Designed using internal intermediate representation to allow for code generation into both
+    \textbf{Arm32} and \textbf{Intel x86-64} assembly code.
+ 
+    Worked effectively in \textbf{time-constrained project} - contributed and discussed design ideas as a group and \textbf{led the group} to 
+    amicable solutions when dissenting opinions were offered. 
 }
 
 \project{Pintos \normalfont{(Group Project)}}{2023}{C}{
     Extended a simple \textbf{operating system framework} into a complex and developed system with features such as a priority-based thread scheduler, 
     synchronisation primitives, system calls and virtual memory. Explored foundational concepts of OS architectures and delved into the
-    pre-existing codebase to understand their practical implementations. Managed workload between group members and wrote detailed design reports. 
+    pre-existing codebase to understand and research their practical implementations. 
+ 
+    Managed workload effectively between group members and wrote detailed design reports to evidence our decisions. 
 }
 
 \project{Weather Wallpaper}{2022 - 2024}{Rust}{
@@ -167,32 +193,43 @@
 
 \project{Origame}{2022 - 2024}{Unity, C\#}{
     Designed and developed a \textbf{2D puzzle platformer game} for A-Level coursework - attained an \textbf{A/A*} grade
-    and has been expanded upon after submission. Learnt problem-solving and bug-fixing techniques during the design of the complex central mechanic: 
+    and has been expanded upon after submission. 
+ 
+    Learnt problem-solving and bug-fixing techniques during the design of the complex central mechanic: 
     'folding' paper platforms in order to progress, providing the illusion using vector mathematics and sprite redrawing.
+ 
     Practiced \textbf{level and puzzle design}, and learnt how to limit a design appetite to maintain a cohesive vision.  
     Completed a comprehensive design document explaining game's inspirations and design methodology.
 }
 
 \project{Painball}{2021}{Unity, C\#}{
-    Pinball game developed in \textbf{7 days} for the 2021 Ludwig Jam. The theme of the jam was Foddian: a game
-    which emulates the frustration of popular Bennett Foddy games.
-    I learnt the importance of \textbf{user testing and feedback} - by watching people play, I could calibrate the difficulty
+    Pinball game developed in \textbf{7 days} for the 2021 Ludwig Jam. The theme of the jam was Foddian; 
+    participants were tasked with creating a game which emulates the frustration of popular Bennett Foddy games.
+    I learnt the importance of \textbf{user testing and feedback}: by watching people play, I could calibrate the difficulty
     to ensure the game remained fun whilst adhering to the design brief. 
 }
     
 
 \section*{Skills and Interests}
 
-\textbf{Languages and Technologies:}{\tab}
-    C, C++, C\#, Rust, Java, Kotlin, Haskell, React, JS, HTML, CSS, %Flutter, 
-    Git, Unity, Latex
+\subsection*{\textbf{Languages and Technologies}}
+\indentedblock{
+    C, C++, C\#, Rust, Java, Kotlin, Haskell, React, JS, HTML, CSS, Flutter, Git, Unity, Latex
+}
 
-% \noindent\textbf{Game Development:} I have competed in game jams, developing games in Unity in anywhere from 48 hours to 14 days.
-% To learn more about the industry, I have studied game development post-mortem blogs, and attended the Games Careers Week.\\
+\subsection*{\textbf{Archery}}
+\indentedblock{
+    I am a former member of Audco Archers, an archery club based at Archery GB's training facilities.
+    Training with Olympic and Paralympic archers was hugely inspiring; among talented archers of all ages, 
+    I learnt the value of friendly competition, something that pushes me to produce exceptional work alongside 
+    my fellow coursemates.
+}
 
-\noindent\textbf{Archery:}{\tab}former member of Audco Archers, an archery club based at Archery GB's training facilities;
-training with Olympic and Paralympic archers was hugely inspiring.
+\subsection*{\textbf{Guitar}}
+\indentedblock{
+    I am a self-taught guitarist; I learnt acoustic guitar to stay productive during the Covid-19 lockdown and have kept playing ever since. 
+    Learning an entirely new skill was a daunting task, but through gradual improvement, I built confidence in my ability to commit 
+    to rigorous self-study.
+}
 
-\noindent\textbf{Guitar:}{\tab}self-taught guitarist; I learnt acoustic guitar to keep busy during the Covid-19 lockdown
-and have kept playing since.
 \end{document}
