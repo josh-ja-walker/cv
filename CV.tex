@@ -22,9 +22,8 @@
 \newcommand{\email}[2]{\href{mailto:#1@#2}{\underline{#1{\small\fontfamily{phv}\selectfont@}#2}}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}}
 \newcommand{\github}{\href{https://github.com/josh-ja-walker}{\underline{GitHub}}}
-\newcommand{\portfolio}{\href{https://josh-ja-walker.github.io/portfolio/}{\underline{Portfolio}}}
 
-% Layout helpers    
+% Layout helpers
 \newcommand{\horizrule}{{\vspace{2pt}}{\hrule height 0.5pt}}
 \newcommand{\dates}[1]{\hfill\textit{(#1)}}
 \newcommand{\tab}{\hspace{1.5em}}
@@ -43,7 +42,15 @@
 \newcommand{\alevel}[2]{#1 - \textit{#2}}
 
 % Project formatting
-\newcommand{\project}[4]{\indentsubsection{\textbf{#1} - \textit{#3} \dates{#2}}{#4}}
+\newcommand{\project}[4]{
+    \indentsubsection{\textbf{#1} - \textit{#3} \dates{#2}}
+    \vspace{-0.175em}
+    \begin{minipage}{\dimexpr\textwidth - 2em}
+        #4
+    \end{minipage}    
+    \hfill
+    \vspace{-0.15em}
+}
 
 % Layout header formatting
 \usepackage{titlesec}
@@ -65,6 +72,7 @@
 
 \begin{document}
 
+
 % Header
 \begin{multicols}{2}
 
@@ -72,7 +80,7 @@
     \begin{flushleft}
         {\LARGE\textbf{Joshua Walker}}\\
         \vspace{0.5em}
-        \portfolio\contactdiv\linkedin\contactdiv\github
+        \linkedin\contactdiv\github
     \end{flushleft}
     
     \columnbreak
@@ -81,55 +89,59 @@
     \begin{flushright}
         \contact{Acton, London, W3 8LU}\\
         \vspace{0.5em}
-        \contact{\email{josh.ja.walker}{outlook.com}}
+        \contact{\email{josh.walker22}{imperial.ac.uk}}
         \contactdiv
         \contact{+44 7572224173}
     \end{flushright}
     
 \end{multicols}
 
+\vspace{-1em}
+
 \section*{Education}
 
 % University
 \indentsubsection{\textbf{Imperial College London} \dates{2022 - current}}{
-    MEng Computing course, currently in 3rd year. Achieved \textbf{first class honours} in 2nd year
+    Third Year MEng Computing - on track for achieving \textbf{first class} honours
 }
 
 
 % Extracurricular interests and programming languages
-\section*{Skills and Interests}
+\section*{Extracurricular Interests}
+Self-taught \textbf{guitarist}, 
+    practised and studied \textbf{art} as an optional module, 
+    former member of \textbf{archery club}
 
-\indentsubsection{\textbf{Languages and Technologies} - Rust, C, C\#, Unity, Java, Haskell, Python, JS, HTML, CSS, Git, Latex}{}
-\indentsubsection{\textbf{Interests} - Self-taught guitarist, study art as an optional module, former member of archery club}{}
+\vspace{-0.65em}
 
-\vspace{0.5em}
-
-
-% Past work
-\section*{Work Experience and Volunteering}
-
-\indentsubsection{\textbf{IC Hack} - Europe's largest student-run hackathon, hosted on Imperial College's South Kensington Campus \dates{2023, 2024, 2025}}{
-    \begin{itemize}[topsep=0pt, itemsep=0.05em]
-        \item\textbf{Volunteered} across both days to help secure the premises and cater for the hundreds of participants and industry representatives.
-        \item\textbf{Participated} to engage with different sectors of the industry while experiencing the challenge of the hackathon.
+\indentsubsection{\textbf{IC Hack} - Europe's largest student-run hackathon, hosted on Imperial College's South Kensington Campus}{
+    \vspace{-0.25em}
+    \begin{itemize}[topsep=0em, itemsep=0.05em]
+        \item \textbf{Volunteered} across both days to help secure the premises and cater for the hundreds of participants and industry representatives.
+        \item Participated to engage with different sectors of the industry while experiencing the challenge of the hackathon.
     \end{itemize}
 }
 
+
+% Past work
+\section*{Work Experience}
+
 \indentsubsection{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \dates{2019}}{
+    \vspace{-0.175em}
     Completed a week's work experience among a group of automotive apprentices, studying engines in a cooperative environment.
 }
 
 
 \section*{Projects}
 
-\project{Dill \normalfont{(Team Leader - Group Project)}}{2024}{Rust, Scala, Tauri, Laminar}{
-    Built a reactive cross-platform debugger for the parser-combinator library Parsley, utilised in Imperial's group coursework WACC. 
-    Implemented the scrum methodology to effectively deliver an app meeting the brief of our supervisor.
+\project{Dill \normalfont{(Group Project)}}{2025}{Rust, Scala, Tauri, Laminar}{
+    Built a \textbf{interactive cross-platform debugger} for the parser combinator library Parsley (utilised in Imperial's compilers coursework), 
+    working throughout semester to deliver an app meeting both the brief of our supervisor and the needs of our fellow undergraduates.
 }
 
 \project{Lettuce Eat \normalfont{(Group Project)}}{2024}{Flutter, Firebase, Dart}{
-    Studied \textbf{Human-Centered Design} with the Royal College of Art in order to build a recipe-based social media Android app for students,
-    using user experience interviews to ensure our product was commercially viable.
+    Studied \textbf{Human-Centered Design} with the Royal College of Art in order to build a recipe-sharing social media app for students,
+    using user interviews to ensure our product was commercially viable and practical for our users.
 }
 
 \project{Sorts TUI}{2024}{Rust}{
@@ -153,18 +165,24 @@
 
 \project{Weather Wallpaper}{2022 - 2024}{Rust}{
     Built a command-line \textbf{wallpaper engine} that changes a user's desktop wallpaper to reflect local weather, learning the fundamentals 
-    of utilising HTTP to access online APIs.
+    of using the \textbf{REST API} to access online data.
 }
 
 \project{Origame}{2022 - 2024}{Unity, C\#}{
-    Developed a 2D puzzle platformer game for A-Level coursework - attained an \textbf{A/A*} grade and expanded further after submission. 
+    Developed a 2D puzzle platformer game for A-Level coursework - attained an A/A* grade and expanded further after submission. 
 }
 
 \project{Painball}{2021}{Unity, C\#}{
-    Pinball game developed in 7 days for the 2021 Ludwig Jam. The theme of the jam was Foddian; 
-    participants were tasked with creating a game which emulates the frustration of popular Bennett Foddy games.
+    Pinball-platformer developed in 7 days for a game jam, the theme of which was Foddian: 
+    participants were tasked with emulating the frustration of popular Bennett Foddy games.
 }
     
+
+\section*{Technical Skills}
+
+\textbf{Languages and Technologies}: 
+    Rust, C, C++, C\#, Unity, Java, Kotlin, Haskell, Python, JS, ReactJS, HTML, CSS, Flutter, \\
+    \indent Dart, Scala, ScalaJS, Laminar, OpenGL (WebGL), P4, PHP, Git, Bash, Latex
 
 
 \end{document}
