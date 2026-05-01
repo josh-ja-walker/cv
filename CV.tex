@@ -21,10 +21,10 @@
 \newcommand{\contactdiv}{\hspace*{0.8em}}
 \newcommand{\email}[2]{\href{mailto:#1@#2}{\underline{#1{\small\fontfamily{phv}\selectfont@}#2}}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}}
-\newcommand{\github}{\href{https://github.com/josh-ja-walker}{\underline{GitHub}}}
+\newcommand{\github}{\href{https://github.com/josh-ja-walker}{\underline{github.com/josh-ja-walker}}}
 
 % Layout helpers
-\newcommand{\horizrule}{{\vspace{2pt}}{\hrule height 0.5pt}}
+\newcommand{\horizrule}{{\hrule height 0.8pt}}
 \newcommand{\dates}[1]{\hfill\textit{(#1)}}
 \newcommand{\tab}{\hspace{1.5em}}
 \newcommand{\indentedblock}[1]{
@@ -42,21 +42,19 @@
 \newcommand{\alevel}[2]{#1 - \textit{#2}}
 
 % Project formatting
-\newcommand{\project}[4]{
-    \indentsubsection{\textbf{#1} - \textit{#3} \dates{#2}}
-    \vspace{-0.1em}
-    \begin{minipage}{\dimexpr\textwidth}% - 3.5em}
-        #4
-    \end{minipage}    
-    \hfill
+\newcommand{\project}[5]{
+    \indentsubsection{\textbf{#1}\textit{#2} - {#4} \dates{#3}}
     \vspace{-0.2em}
-    % \vspace{0.25em}
+    \begin{minipage}{\dimexpr\textwidth}% - 3.5em}
+        #5
+    \end{minipage}
+    \vspace{-1em}
 }
 
 % Layout header formatting
 \usepackage{titlesec}
-\titleformat{\section}{\normalfont\large}{\thesection}{1em}{}[\horizrule]
-\titleformat{\subsection}{\normalfont}{\thesection}{1em}{}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}[\horizrule]
+\titleformat{\subsection}{\normalfont}{\thesection}{0.1em}{}
 
 % Column handling
 \usepackage{multicol}
@@ -77,89 +75,93 @@
 
 % Name and links
 \begin{center}
-    \vspace{0.20em}
+    {\LARGE\textbf{Joshua Walker}}
     
-    {\LARGE\textbf{Joshua Walker}}\\
+    \vspace{0.5em}
     
-    \vspace{0.65em}
-    
-    \contact{\email{josh.walker22}{imperial.ac.uk}}
+    \contact{\email{josh.ja.walker}{outlook.com}}
     \contactdiv
     \contact{+44 7572224173}
     \contactdiv
     \github
-
 \end{center}
 
-    
+
+
 \section*{Education}
 
 % University
-\indentsubsection{\textbf{Imperial College London} \dates{2022 - current}}{
-    MEng Computing, third year - on track for achieving \textbf{first class} honours
+\indentsubsection{\textbf{Imperial College London} \dates{2022 - 2026}}{
+    MEng Computing, fourth year - on track for achieving \textbf{first class} honours
 }
+
+
+% Past work
+\section*{Employment History}
+
+\indentsubsection{\textbf{Elliott Management} \dates{Apr 2025 - Sep 2025}}{
+    Worked as a \textbf{Junior Software Engineer} for the London branch of New York-based hedge fund \textbf{Elliott Management}, supporting senior developers in their roles - key projects included providing traders with reports to aid market assessments and developing stronger software engineering foundations for the monitoring of support systems.
+}
+
+% \indentsubsection{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \dates{Sep 2019}}{
+%     Completed a week's work experience among a group of automotive apprentices, studying engines in a cooperative environment.
+% }
 
 
 % Programming languages and experience
 \section*{Technical Skills}
 
-\textbf{Languages and Technologies}: 
-    Rust, C, C++, C\#, Unity, Java, Kotlin, Haskell, Python, JS, ReactJS, HTML, CSS, Flutter, \vspace{0.25em}\\
-    \indent Dart, Scala, ScalaJS, Laminar, Assembly, WebGL, P4, PHP, Git, Bash, Latex
-
-
-% Past work
-\section*{Work Experience}
-
-\indentsubsection{\textbf{In-Comm} (formerly Marches Centre of Manufacturing Technology) \dates{2019}}{
-    Completed a week's work experience among a group of automotive apprentices, studying engines in a cooperative environment.
-}
+\subsection*{\textbf{Languages and Technologies}}
+Scala, ScalaJS, ScalaNative, Rust, C, C\#, Unity, Java, Haskell, Python, JS, ReactJS, HTML, CSS, Assembly, Git, Bash, Latex
 
 
 \section*{Projects}
 
-\project{Dill \normalfont{(Group Project)}}{2025}{Rust, Scala, Tauri, Laminar}{
+\project{Ginseng}{ (Final Year Project)}{2026}{Scala, OpenGL}{
+    Proposed and developed a project utilising principled staged-metaprogramming techniques to efficiently convert from an ergonomic functional programming domain specific language for rendering graphics into standardised OpenGL code.  
+}
+
+\project{Dill}{ (Group Project)}{2025}{Rust, Scala, Tauri, Laminar}{
     Built a \textbf{interactive cross-platform debugger} for the parser combinator library Parsley (utilised in Imperial's compilers coursework), 
     working throughout semester to deliver an app meeting both the brief of our supervisor and the needs of our fellow undergraduates.
 }
 
-\project{Lettuce Eat \normalfont{(Group Project)}}{2024}{Flutter, Firebase, Dart}{
+\project{Designing for Real People}{ (Group Project)}{2024}{Flutter, Firebase, Dart}{
     Studied \textbf{Human-Centered Design} with the Royal College of Art in order to build a recipe-sharing social media app for students,
     using user interviews to ensure our product was commercially viable and practical for our users.
 }
 
-\project{Sorts TUI}{2024}{Rust}{
+\project{Sorts TUI}{}{2024}{Rust}{
     Developed an in-terminal utility for visualising sorting algorithms, built as as an exercise in understanding \textbf{algorithmic complexity}.
 }
 
-\project{Portfolio Website}{2024}{JavaScript, React, CSS}{
+\project{Portfolio Website}{}{2024}{JavaScript, React, CSS}{
     Designed and developed my own portfolio website to showcase skills and experience gained through university and solo projects.
 }
 
-\project{WACC \normalfont{(Group Project)}}{2024}{Rust}{
-    Built an \textbf{optimising compiler} in Rust using the Chumsky parser library, compiling initially to an 
-    internal intermediate representation to allow for code generation into both Arm32 and Intel x86-64 assembly code.
+\project{WACC}{ (Group Project)}{2024}{Rust}{
+    Built an \textbf{optimising compiler} in Rust using the Chumsky parser library, compiling initially to an internal intermediate representation to allow for code generation into both Arm32 and Intel x86-64 assembly code.
 }
 
-\project{Pintos \normalfont{(Group Project)}}{2023}{C}{
+\project{Pintos}{ (Group Project)}{2023}{C}{
     Extended a simple \textbf{operating system} with features such as synchronisation primitives, 
     system calls and virtual memory. Explored foundational concepts of OS architectures and delved into the
     pre-existing codebase to research their practical implementations. 
 }
 
-\project{Weather Wallpaper}{2022 - 2024}{Rust}{
+\project{Weather Wallpaper}{}{2022 - 2024}{Rust}{
     Built a command-line \textbf{wallpaper engine} that changes a user's desktop wallpaper to reflect local weather, learning the fundamentals 
     of using the REST API to access online data.
 }
 
-\project{ARMv8 Assembler and Emulator}{2023}{C} {
-    Implemented an emulator to simulate execution of an \textbf{AArch64} binary on a Raspberry PI; developed in tandem with an \textbf{assembler},
-    converting assembly source files to a binary executable ready for emulation. 
-}
-
-% \project{Origame}{2022 - 2024}{Unity, C\#}{
-%     Developed a 2D puzzle platformer game for A-Level coursework - attained an A/A* grade and expanded further after submission. 
+% \project{ARMv8 Assembler and Emulator}{}{2023}{C} {
+%     Implemented an emulator to simulate execution of an \textbf{AArch64} binary on a Raspberry PI; developed in tandem with an \textbf{assembler},
+%     converting assembly source files to a binary executable ready for emulation. 
 % }
+
+\project{Origame}{ (Game Jam submission)}{2022 - 2024}{Unity, C\#}{
+    Created a 2D puzzle-platformer game for A-Level coursework using the mechanics of folding paper platforms to progress through levels.
+}
 
 % \project{Painball}{2021}{Unity, C\#}{
 %     Pinball-platformer developed in 7 days for a game jam, the theme of which was Foddian: 
@@ -169,12 +171,7 @@
 
 % Extracurricular interests
 \section*{Extracurricular}
-Self-taught \textbf{guitarist}. 
-Practised and studied \textbf{Practical Art} as an optional module.
-Former member of an \textbf{archery club}.
-
-\vspace{0.35em}
-\noindent{\textbf{IC Hack} - volunteered and participated in Europe's largest student-run hackathon, hosted on Imperial's South Kensington Campus}
+Self-taught guitarist \(|\) enjoy competing in Game Jams \(|\) studied Practical Art as an optional module \(|\) former member of an archery club \(|\) volunteered and participated in Europe's largest student-run hackathon, hosted on Imperial's South Kensington Campus.
 
 
 \end{document}
