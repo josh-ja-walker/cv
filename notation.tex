@@ -1,0 +1,43 @@
+%----------------------------------------------------------------------------------------
+%	CUSTOM MACROS AND COMMANDS
+%----------------------------------------------------------------------------------------
+
+
+% Contact details 
+
+\newcommand{\name}{Joshua Walker}
+\newcommand{\contactemail}{\email{josh.ja.walker}{outlook.com}}
+\newcommand{\contactnumber}{+44 7572224173}
+
+\newcommand{\cvTitle}{\huge\textbf{\name}\\\vspace{0.5em}}
+
+\newcommand{\contact}[1]{\normalsize{#1}}
+\newcommand{\contactdiv}{\hspace*{1.5em}}
+\newcommand{\email}[2]{\href{mailto:#1@#2}{\underline{#1{\small\fontfamily{phv}\selectfont@}#2}}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/joshua-walker-080714238/}{\underline{LinkedIn}}}
+\newcommand{\github}{\href{https://github.com/josh-ja-walker}{\underline{github.com/josh-ja-walker}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Layout helpers
+
+\newcommand{\horizrule}{{\hrule height 0.8pt}}
+\newcommand{\dates}[1]{\hfill#1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\module}[4]{
+    #1 \textbf{#2} (#3\%) -- {#4}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Project formatting
+
+\newcommand{\project}[5]{
+    \subsection*{\textbf{#1}{#2} -- {#4} \dates{#3}}
+    {#5}\vspace{-0.2em}
+}
+

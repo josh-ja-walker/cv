@@ -1,0 +1,72 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+
+% Margins
+
+% \usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[a4paper, hmargin=0.7in, vmargin=0.7in]{geometry}
+% \usepackage[a4paper, hmargin=0.8in,top=0.7in, bottom=0.5in]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Font 
+
+% \renewcommand\familydefault\sfdefault
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Header formatting
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries\uppercase}{\thesection}{1em}{}[\horizrule]
+\titleformat{\subsection}{\normalfont}{\thesection}{0.1em}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Layout sizes
+
+\usepackage{calc}
+\setlength{\parindent}{0pt} % Remove new paragraph indents
+% \setlength{\parskip}{\parskip - 0.3em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Lists and itemize layouts
+
+\usepackage{enumitem}
+\setitemize{itemsep=0em, parsep=0.2em, topsep=0.35em}
+\renewcommand{\labelitemi}{$\bullet$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Column handling
+
+\usepackage{multicol}
+\setlength{\columnsep}{2em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colours and hyperlinks
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{urlblue}{HTML}{0000CD}
+\definecolor{darkgrey}{HTML}{191919}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=urlblue,
+    urlcolor=darkgrey,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
